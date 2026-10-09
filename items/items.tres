@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Items" format=3 uid="uid://chrue7mhgibyv"]
+
+[ext_resource type="Texture2D" uid="uid://c0vtwjnh2lxuk" path="res://items/hierro.png" id="1_t8h7w"]
+[ext_resource type="Script" uid="uid://i4dqqngexxhg" path="res://items/items.gd" id="2_fa3om"]
+[ext_resource type="Texture2D" uid="uid://budsuekew52pg" path="res://items/cobre-ore.png" id="2_to5yn"]
+
+[resource]
+script = ExtResource("2_fa3om")
+metadata/_custom_type_script = "uid://i4dqqngexxhg"

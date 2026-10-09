@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b5084di3h45y5"]
+
+[ext_resource type="Script" uid="uid://dve3vgqcqfslc" path="res://scenes/iu/cinta_boton.gd" id="1_ps8h8"]
+[ext_resource type="Resource" uid="uid://dbc1yug36c1fb" path="res://scripts/resorces/cinta_data.tres" id="2_8cvnb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6qu11"]
+load_path = "res://.godot/imported/cinta.png-1a1e2242d60f1ff613f3a4202b51b197.ctex"
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1771556750]
+
+[node name="Panel" type="Panel" parent="." unique_id=83858013]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1792402249]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer" unique_id=964772755]
+layout_mode = 2
+
+[node name="GridContainer2" type="GridContainer" parent="Panel/VBoxContainer" unique_id=207342546]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/GridContainer2" unique_id=784806165]
+layout_mode = 2
+toggle_mode = true
+text = "cinta"
+icon = SubResource("CompressedTexture2D_6qu11")
+script = ExtResource("1_ps8h8")
+datos = ExtResource("2_8cvnb")

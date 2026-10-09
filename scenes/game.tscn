@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://bhxmus68q4uj2"]
+
+[ext_resource type="PackedScene" uid="uid://bdfiurkt67q50" path="res://mapas/tile_map_layer.tscn" id="1_lnu2h"]
+[ext_resource type="Script" uid="uid://xllqlt58n4b5" path="res://scripts/ghost_bulding.gd" id="2_lbhrr"]
+[ext_resource type="Script" uid="uid://byr88aoyg403o" path="res://scripts/global_grid_manager.gd" id="3_iywne"]
+[ext_resource type="Script" uid="uid://bgqjrhhbgh5jf" path="res://scripts/build_controler.gd" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://b5084di3h45y5" path="res://scenes/iu/canvas_layer.tscn" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://dtidd5v4p184i" path="res://assets/Buildings/Cyan/CyanWorkshops.png" id="6_p57ef"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
+texture = ExtResource("6_p57ef")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g7b7a"]
+sources/0 = SubResource("TileSetAtlasSource_u5sy4")
+
+[node name="Game" type="Node2D" unique_id=634226069]
+
+[node name="TileMapLayer" parent="." unique_id=1956997795 instance=ExtResource("1_lnu2h")]
+
+[node name="ghost" type="Node2D" parent="." unique_id=433720574 node_paths=PackedStringArray("grid_manager")]
+script = ExtResource("2_lbhrr")
+grid_manager = NodePath("../GridManager")
+
+[node name="GridManager" type="Node2D" parent="." unique_id=1315663985 node_paths=PackedStringArray("terreno_colisiones")]
+script = ExtResource("3_iywne")
+tile_size = 16
+terreno_colisiones = NodePath("../coliciones")
+
+[node name="BuildManager" type="Node2D" parent="." unique_id=150072359 node_paths=PackedStringArray("grid_manager", "ghost_building")]
+script = ExtResource("4_lbhrr")
+grid_manager = NodePath("../GridManager")
+ghost_building = NodePath("../ghost")
+
+[node name="CanvasLayer" parent="." unique_id=1771556750 instance=ExtResource("5_iywne")]
+
+[node name="coliciones" type="TileMapLayer" parent="." unique_id=2139511534]
+tile_map_data = PackedByteArray("AAAIAAIAAAACAAEAAAAJAAYAAAACAAEAAAAJAAUAAAACAAEAAAAIAAQAAAACAAEAAAAIAAMAAAACAAEAAAAIAAUAAAACAAEAAAAJAAcAAAACAAEAAAAKAAcAAAACAAEAAAALAAgAAAACAAEAAAAMAAgAAAACAAEAAAAMAAcAAAACAAEAAAANAAcAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_g7b7a")

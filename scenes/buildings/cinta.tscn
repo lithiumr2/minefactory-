@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://2r36c1qnlmcg"]
+
+[ext_resource type="Texture2D" uid="uid://dwxyfb1yc5fyi" path="res://assets/Buildings/cinta.png" id="1_lnmb2"]
+[ext_resource type="Script" uid="uid://dtnqnvf4ajjgd" path="res://scenes/buildings/cinta.gd" id="1_r7kum"]
+[ext_resource type="Resource" uid="uid://chrue7mhgibyv" path="res://items/items.tres" id="2_xgpvu"]
+
+[node name="Cinta" type="Node2D" unique_id=333772269]
+script = ExtResource("1_r7kum")
+catalogo_items = ExtResource("2_xgpvu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=43300213]
+texture = ExtResource("1_lnmb2")
+offset = Vector2(16, 16)
+flip_v = true

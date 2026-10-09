@@ -1,0 +1,60 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="mine factory"
+run/main_scene="uid://bhxmus68q4uj2"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+EventBus="*uid://dhgj2fsq3mpai"
+GlobalEnumsManager="*uid://cd4u2h8prmyot"
+GlobalGridManager="*uid://byr88aoyg403o"
+
+[display]
+
+window/size/viewport_width=368
+window/size/viewport_height=178
+window/stretch/mode="canvas_items"
+
+[input]
+
+remove_building={
+"deadzone": 0.2,
+"events": []
+}
+place_building={
+"deadzone": 0.2,
+"events": []
+}
+rotate_building={
+"deadzone": 0.2,
+"events": []
+}
+toggle_underground={
+"deadzone": 0.2,
+"events": []
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
